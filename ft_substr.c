@@ -6,7 +6,7 @@
 /*   By: mrk <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 15:53:07 by mrk               #+#    #+#             */
-/*   Updated: 2024/03/09 16:09:27 by mrk              ###   ########.fr       */
+/*   Updated: 2024/03/09 16:13:06 by mrk              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -33,8 +33,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 			count++;
 		}
 		sub[i] = '\0';
-	}
 	return (sub);
+	}
+	return (NULL);
 }
 /*#include <stdio.h>
 int	main()
