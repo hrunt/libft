@@ -6,7 +6,7 @@
 /*   By: mrk <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 15:53:07 by mrk               #+#    #+#             */
-/*   Updated: 2024/03/09 15:51:02 by mrk              ###   ########.fr       */
+/*   Updated: 2024/03/09 15:52:23 by mrk              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -22,9 +22,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	while (s[start] && start < len)
 		start++;
 	if (start <= ft_strlen((char *)s))
+	{
 		sub = (char *)malloc(sizeof(char) * (start + 1));
-	if (!sub)
-		return (NULL);
+			if (!sub)
+				return (NULL);
+	}
 	while (i < start + 1 && i < len && count < ft_strlen((char *)s))
 	{
 		sub[i] = s[count];
