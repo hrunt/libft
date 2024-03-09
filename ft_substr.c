@@ -6,7 +6,7 @@
 /*   By: mrk <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 15:53:07 by mrk               #+#    #+#             */
-/*   Updated: 2024/03/05 16:57:32 by mrk              ###   ########.fr       */
+/*   Updated: 2024/03/09 15:28:34 by mrk              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -36,7 +36,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 /*#include <stdio.h>
 int	main()
 {
-	char s1[] = "ABC";
-	char *s2 = ft_substr(s1, 400, 20);
+	char s1[] = "ABCDED";
+	char *s2 = ft_substr(s1, 2, 3);
 	printf("%s", s2); 
 }*/
