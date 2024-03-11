@@ -6,7 +6,7 @@
 /*   By: mrk <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 14:35:20 by mrk               #+#    #+#             */
-/*   Updated: 2024/03/11 18:07:57 by mrk              ###   ########.fr       */
+/*   Updated: 2024/03/11 18:09:26 by mrk              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -52,21 +52,6 @@ char	*fill(char *s, int i, int cnt)
 	ar[p] = '\0';
 	return (ar);
 }
-void	free_split_result(char **ar) 
-{
-	int	i;
-
-	i = 0;
-	if (!ar)
-		return;
-	while (ar[i])
-	{
-		free(ar[i]);
-		i++;
-	}
-	free(ar);
-}
-
 
 char	**ft_split(char const *s, char c)
 {
@@ -96,7 +81,6 @@ char	**ft_split(char const *s, char c)
 			i++;
 	}
 	ar[m] = NULL;
-	free_split_result(ar);
 	return (ar);
 }
 /*#include <stdio.h>
