@@ -6,7 +6,7 @@
 /*   By: mrk <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 11:38:55 by mrk               #+#    #+#             */
-/*   Updated: 2024/03/11 16:46:17 by mrk              ###   ########.fr       */
+/*   Updated: 2024/03/11 17:05:15 by mrk              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -17,6 +17,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	void	*dest2;
 
 	dest2 = dest;
+	if (!dest && !src)
+		return (dest);
 	if (dest == src)
 		return (dest);
 	if (dest > src)
