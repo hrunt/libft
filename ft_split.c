@@ -6,7 +6,7 @@
 /*   By: mrk <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 14:35:20 by mrk               #+#    #+#             */
-/*   Updated: 2024/03/12 15:20:41 by mrk              ###   ########.fr       */
+/*   Updated: 2024/03/12 15:21:30 by mrk              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -53,7 +53,7 @@ char	*fill(char *s, int i, int cnt)
 	return (ar);
 }
 
-static int	word_len(const char *s, char c)
+/*static int	word_len(const char *s, char c)
 {
 	int	i;
 
@@ -63,7 +63,7 @@ static int	word_len(const char *s, char c)
 	return (i);
 }
 
-/*static void	free_str(char **ar, int m)
+static void	free_str(char **ar, int m)
 {
 	int	i;
 
