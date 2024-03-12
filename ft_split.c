@@ -6,7 +6,7 @@
 /*   By: mrk <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 14:35:20 by mrk               #+#    #+#             */
-/*   Updated: 2024/03/12 16:18:34 by mrk              ###   ########.fr       */
+/*   Updated: 2024/03/12 16:21:43 by mrk              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -34,6 +34,7 @@ int	count(char *s, char c)
 	}
 	return (count);
 }
+
 char	*fill(char *s, int i, int cnt)
 {
 	int		p;
@@ -64,10 +65,13 @@ static void	free_str(char **ar, int m)
 	}
 	free (ar);
 }
-static char	**split(char **ar, char *s, char c, int i, int m)
+
+static char	**split(char **ar, char *s, char c, int m)
 {
 	int	t;
+	int	i;
 
+	i = 0;
 	while (s[i])
 	{
 		if (s[i] != c)
@@ -75,10 +79,10 @@ static char	**split(char **ar, char *s, char c, int i, int m)
 			t = i;
 			while (s[i] != c && s[i])
 				i++;
-			ar[m] = fill((char *)s,i,t);
+			ar[m] = fill((char *)s, i, t);
 			if (!ar[m])
 			{
-				free_str(ar,m);
+				free_str(ar, m);
 				return (NULL);
 			}
 			m++;
@@ -93,13 +97,11 @@ static char	**split(char **ar, char *s, char c, int i, int m)
 char	**ft_split(char const *s, char c)
 {
 	char	**ar;
-	int		i;
 	int		m;
 
-	ar = (char **)malloc(sizeof(char *) * ((count((char *)s,c))+1));
+	ar = (char **)malloc(sizeof(char *) * ((count((char *)s, c)) + 1));
 	if (!ar)
 		return (NULL);
-	i = 0;
 	m = 0;
 	ar = split(ar, (char *)s, c, i, m);
 	return (ar);
