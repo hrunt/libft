@@ -6,7 +6,7 @@
 /*   By: mrk <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 14:35:20 by mrk               #+#    #+#             */
-/*   Updated: 2024/03/12 16:17:38 by mrk              ###   ########.fr       */
+/*   Updated: 2024/03/12 16:18:34 by mrk              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -93,7 +93,6 @@ static char	**split(char **ar, char *s, char c, int i, int m)
 char	**ft_split(char const *s, char c)
 {
 	char	**ar;
-	int		t;
 	int		i;
 	int		m;
 
