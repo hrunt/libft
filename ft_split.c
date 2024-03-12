@@ -6,7 +6,7 @@
 /*   By: mrk <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 14:35:20 by mrk               #+#    #+#             */
-/*   Updated: 2024/03/12 15:21:30 by mrk              ###   ########.fr       */
+/*   Updated: 2024/03/12 16:17:38 by mrk              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -34,7 +34,6 @@ int	count(char *s, char c)
 	}
 	return (count);
 }
-
 char	*fill(char *s, int i, int cnt)
 {
 	int		p;
@@ -53,16 +52,6 @@ char	*fill(char *s, int i, int cnt)
 	return (ar);
 }
 
-/*static int	word_len(const char *s, char c)
-{
-	int	i;
-
-	i = 0;
-	while (s[i] && s[i] != c)
-		i++;
-	return (i);
-}
-
 static void	free_str(char **ar, int m)
 {
 	int	i;
@@ -74,12 +63,37 @@ static void	free_str(char **ar, int m)
 		i++;
 	}
 	free (ar);
-}*/
+}
+static char	**split(char **ar, char *s, char c, int i, int m)
+{
+	int	t;
+
+	while (s[i])
+	{
+		if (s[i] != c)
+		{
+			t = i;
+			while (s[i] != c && s[i])
+				i++;
+			ar[m] = fill((char *)s,i,t);
+			if (!ar[m])
+			{
+				free_str(ar,m);
+				return (NULL);
+			}
+			m++;
+		}
+		while (s[i] && s[i] == c)
+			i++;
+	}
+	ar[m] = NULL;
+	return (ar);
+}
 
 char	**ft_split(char const *s, char c)
 {
 	char	**ar;
-	int		cnt;
+	int		t;
 	int		i;
 	int		m;
 
@@ -88,22 +102,7 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	i = 0;
 	m = 0;
-	while (s[i])
-	{
-		if (s[i] != c)
-		{
-			cnt = i;
-			while (s[i] != c && s[i])
-				i++;
-			ar[m] = fill((char *)s, i, cnt);
-			if (!ar[m])
-				return (NULL);
-			m++;		
-		}
-		while (s[i] && s[i] == c)
-			i++;
-	}
-	ar[m] = NULL;
+	ar = split(ar, (char *)s, c, i, m);
 	return (ar);
 }
 /*#include <stdio.h>
