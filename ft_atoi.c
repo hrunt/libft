@@ -6,7 +6,7 @@
 /*   By: mrk <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 18:03:49 by mrk               #+#    #+#             */
-/*   Updated: 2024/03/04 16:17:50 by mrk              ###   ########.fr       */
+/*   Updated: 2024/03/12 16:38:21 by mrk              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -14,7 +14,7 @@
 int	ft_atoi(const char *nptr)
 {
 	int	i;
-	int	result;
+	long long int	result;
 	int	sign;
 
 	i = 0;
