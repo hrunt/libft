@@ -6,7 +6,7 @@
 /*   By: mrk <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 14:35:20 by mrk               #+#    #+#             */
-/*   Updated: 2024/03/12 16:21:43 by mrk              ###   ########.fr       */
+/*   Updated: 2024/03/12 16:22:39 by mrk              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -103,7 +103,7 @@ char	**ft_split(char const *s, char c)
 	if (!ar)
 		return (NULL);
 	m = 0;
-	ar = split(ar, (char *)s, c, i, m);
+	ar = split(ar, (char *)s, c, m);
 	return (ar);
 }
 /*#include <stdio.h>
