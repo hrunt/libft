@@ -6,7 +6,7 @@
 /*   By: mrk <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 14:35:20 by mrk               #+#    #+#             */
-/*   Updated: 2024/03/11 18:45:56 by mrk              ###   ########.fr       */
+/*   Updated: 2024/03/12 15:18:24 by mrk              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -26,7 +26,7 @@ int	count(char *s, char c)
 			while (s[i] != c && s[i])
 				i++;
 		}
-		else 
+		else
 		{
 			while (s[i] && s[i] == c)
 				i++;
@@ -53,7 +53,17 @@ char	*fill(char *s, int i, int cnt)
 	return (ar);
 }
 
-void	free_str(char **ar, int m)
+static int	word_len(const char *s, char c)
+{
+	int	i;
+
+	i = 0;
+	while (s[i] && s[i] != c)
+		i++;
+	return (i);
+}
+
+/*static void	free_str(char **ar, int m)
 {
 	int	i;
 
@@ -64,7 +74,8 @@ void	free_str(char **ar, int m)
 		i++;
 	}
 	free (ar);
-}
+}*/
+
 char	**ft_split(char const *s, char c)
 {
 	char	**ar;
@@ -72,9 +83,7 @@ char	**ft_split(char const *s, char c)
 	int		i;
 	int		m;
 
-	if (!s)
-		return (NULL);
-	ar = (char **)malloc (sizeof(char *) * ((count((char *)s, c)) + 1));
+	ar = (char **)malloc(sizeof(char *) * ((count((char *)s,c))+1))
 	if (!ar)
 		return (NULL);
 	i = 0;
@@ -86,11 +95,10 @@ char	**ft_split(char const *s, char c)
 			cnt = i;
 			while (s[i] != c && s[i])
 				i++;
-			if (!(ar[m++] = fill((char *)s, i, cnt)))
-			{
-				free_str(ar, --m);
+			ar[m] = fill((char *)s, i, cnt);
+			if (!ar[m])
 				return (NULL);
-			}		
+			m++;		
 		}
 		while (s[i] && s[i] == c)
 			i++;
