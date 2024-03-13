@@ -6,13 +6,13 @@
 /*   By: mrk <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 18:53:40 by mrk               #+#    #+#             */
-/*   Updated: 2024/03/09 12:20:27 by mrk              ###   ########.fr       */
+/*   Updated: 2024/03/13 13:46:30 by mrk              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 #include <unistd.h>
 
-static int	chk(int n)
+static int	chk(long long n)
 {
 	int	i;
 
@@ -31,7 +31,7 @@ static int	chk(int n)
 	}
 	return (i);
 }
-static char	*cnt(int n)
+static char	*cnt(long long n)
 {
 	int	i;
 	char	*ar;
@@ -54,29 +54,25 @@ char	*ft_itoa(int n)
 {
 	char 	*ar;
 	int	i;
+	long long	b;
 
-	ar = cnt (n);
+	b = (long long)n;
+	ar = cnt (b);
 	if (!ar)
 		return (NULL);
-	i = chk(n);
-	if (n == 0)
+	i = chk(b);
+	if (b == 0)
 		ar[i - 1] = 0 + '0';
 	ar[i] = '\0';
-	if (n == -2147483648)
+	if (b < 0)
 	{
 		ar[0] = '-';
-		ar[1] = '2';
-		n = 147483648;
+		b *= -1;
 	}
-	if (n < 0)
-	{
-		ar[0] = '-';
-		n *= -1;
-	}
-	while (n > 0)
+	while (b > 0)
 	{		
-		ar[i-- - 1] = (n % 10 + '0');
-		n /= 10;
+		ar[i-- - 1] = (b % 10 + '0');
+		b /= 10;
 	}
 	return (ar);
 }
@@ -89,7 +85,7 @@ int main()
 
 	i = 0;
 
-	sd = ft_itoa (-5859);
+	sd = ft_itoa (2147483648);
 	while (sd[i] )
 	{
 		write (1, &sd[i], 1);
