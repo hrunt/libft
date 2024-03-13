@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 CC = cc
-AR = ar rc
+AR = ar rcs
 RM = rm -rf
 FLAGS = -Wall -Wextra -Werror
 NAME = libft.a
