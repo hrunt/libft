@@ -6,7 +6,7 @@
 /*   By: mrk <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 18:18:39 by mrk               #+#    #+#             */
-/*   Updated: 2024/03/08 18:49:36 by mrk              ###   ########.fr       */
+/*   Updated: 2024/03/13 14:07:27 by mrk              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -18,7 +18,7 @@ static void	ptchr(char c, int fd)
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	if ( n == -2147483648)
+	if (n == -2147483648)
 	{
 		ptchr ('-', fd);
 		ptchr ('2', fd);
@@ -39,5 +39,5 @@ void	ft_putnbr_fd(int n, int fd)
 }
 /*int	main()
 {
-	ft_putnbr_fd(-2147483648,1);
+	ft_putnbr_fd(10,1);
 }*/

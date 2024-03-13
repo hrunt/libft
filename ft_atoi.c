@@ -6,16 +6,16 @@
 /*   By: mrk <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 18:03:49 by mrk               #+#    #+#             */
-/*   Updated: 2024/03/12 16:38:21 by mrk              ###   ########.fr       */
+/*   Updated: 2024/03/13 16:14:08 by mrk              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 int	ft_atoi(const char *nptr)
 {
-	int	i;
+	int				i;
 	long long int	result;
-	int	sign;
+	int				sign;
 
 	i = 0;
 	result = 0;

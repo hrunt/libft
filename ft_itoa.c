@@ -6,11 +6,10 @@
 /*   By: mrk <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 18:53:40 by mrk               #+#    #+#             */
-/*   Updated: 2024/03/13 13:46:30 by mrk              ###   ########.fr       */
+/*   Updated: 2024/03/13 16:25:39 by mrk              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <unistd.h>
 
 static int	chk(long long n)
 {
@@ -31,29 +30,31 @@ static int	chk(long long n)
 	}
 	return (i);
 }
+
 static char	*cnt(long long n)
 {
-	int	i;
+	int		i;
 	char	*ar;
 
 	i = 0;
 	if (n < 0 || n == 0)
-		i = 1; 
+		i = 1;
 	while (n)
 	{
 		n /= 10;
 		i++;
-	};
+	}
 	ar = malloc(sizeof(char) * (i + 1));
 	if (!ar)
 		return (NULL);
 	else
 		return (ar);
-}	
+}
+
 char	*ft_itoa(int n)
 {
-	char 	*ar;
-	int	i;
+	char		*ar;
+	int			i;
 	long long	b;
 
 	b = (long long)n;
@@ -70,7 +71,7 @@ char	*ft_itoa(int n)
 		b *= -1;
 	}
 	while (b > 0)
-	{		
+	{
 		ar[i-- - 1] = (b % 10 + '0');
 		b /= 10;
 	}

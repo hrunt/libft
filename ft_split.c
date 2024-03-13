@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int	count(char *s, char c)
+static int	count(char *s, char c)
 {
 	int	i;
 	int	count;
@@ -35,7 +35,7 @@ int	count(char *s, char c)
 	return (count);
 }
 
-char	*fill(char *s, int i, int cnt)
+static char	*fill(char *s, int i, int cnt)
 {
 	int		p;
 	char	*ar;

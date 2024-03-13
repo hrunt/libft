@@ -6,16 +6,16 @@
 /*   By: mhrynevi <mhrynevi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 18:34:28 by mhrynevi          #+#    #+#             */
-/*   Updated: 2024/03/12 17:44:01 by mrk              ###   ########.fr       */
+/*   Updated: 2024/03/13 16:14:44 by mrk              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
-	int		i;
+	int	i;
 
-	i = 0;	
+	i = 0;
 	while (s[i])
 	{
 		if (s[i] == (char)c)
