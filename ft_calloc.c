@@ -6,7 +6,7 @@
 /*   By: mrk <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 14:33:08 by mrk               #+#    #+#             */
-/*   Updated: 2024/03/04 14:34:55 by mrk              ###   ########.fr       */
+/*   Updated: 2024/03/13 17:43:26 by mrk              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -15,11 +15,12 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*p;
 
+	if (nmemb && size && nmemb > (UINT_MAX / size))
+		return (NULL);
 	p = malloc(nmemb * size);
-	if (p != NULL)
-	{
-		ft_memset(p, 0, nmemb * size);
-	}
+	if (!p)
+		return (NULL);
+	ft_memset(p, 0, nmemb * size);
 	return (p);
 }
 /*#include <unistd.h>

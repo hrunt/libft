@@ -6,12 +6,12 @@
 /*   By: mhrynevi <mhrynevi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 18:16:34 by mhrynevi          #+#    #+#             */
-/*   Updated: 2024/02/27 18:21:36 by mhrynevi         ###   ########.fr       */
+/*   Updated: 2024/03/13 17:29:05 by mrk              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-size_t	ft_strlen(char *s)
+size_t	ft_strlen(const char *s)
 {
 	size_t	i;
 
