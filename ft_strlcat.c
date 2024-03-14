@@ -42,9 +42,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 int	main (void)
 {
 	char src[] = "AAAAAAAAA";
-	char dest[30];
-	ft_memset(dest, 0, 30);
-	dest[0] = 'B';
+	char dest[] = "Sdadsasd";
 	
-	printf("%ld and %s\n", ft_strlcat(dest, src, -1), dest);
+	printf("%ld and %s\n", ft_strlcat(dest, src, 0), dest);
 }*/

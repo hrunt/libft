@@ -6,7 +6,7 @@
 /*   By: mrk <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 18:51:30 by mrk               #+#    #+#             */
-/*   Updated: 2024/03/04 14:35:28 by mrk              ###   ########.fr       */
+/*   Updated: 2024/03/14 15:25:12 by mrk              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -22,12 +22,10 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	if (src2 == NULL && dest2 == NULL)
 		return (NULL);
 	i = 0;
+	while (i < n)
 	{
-		while (i < n)
-		{
-			dest2[i] = src2[i];
-			i++;
-		}
+		dest2[i] = src2[i];
+		i++;
 	}
 	return (dest2);
 }
@@ -39,7 +37,7 @@ int	main(void)
 	char src[] = "OLLAH";
 	int i = 0;
 
-	ft_memcpy(dest, src, 3);
+	ft_memcpy(dest, src, 4);
 	while (dest[i])
 	{
 		write (1, &dest[i], 1);
