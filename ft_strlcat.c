@@ -13,28 +13,23 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t	dst_len;
-	size_t	src_len;
-	size_t	len;
+	size_t	j;
+	size_t	k;
 
-	dst_len = 0;
-	src_len = 0;
+	j = 0;
+	k = 0;
 	if ((!dst || !src) && !size)
 		return (0);
-	while (dst[dst_len] && dst_len < size)
-		dst_len++;
-	if (dst_len < size)
-		len = dst_len + ft_strlen((char *)src);
-	else
-		return (size + ft_strlen((char *)src));
-	while (src[src_len] && dst_len + 1 < size)
+	while (dst[j] && j < size)
+		j++;
+	while ((src[k]) && ((j + k + 1) < size))
 	{
-		dst[dst_len] = src[src_len];
-		src_len++;
-		dst_len++;
+		dst[j + k] = src[k];
+		k++;
 	}
-	dst[dst_len] = '\0';
-	return (len);
+	if (j != size)
+		dst[j + k] = '\0';
+	return (j + ft_strlen(src));
 }
 /*#include <stdio.h>
 #include <string.h>

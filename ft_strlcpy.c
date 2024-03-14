@@ -14,21 +14,19 @@
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
-	size_t	i2;
 
 	i = 0;
-	i2 = 0;
-	while (src[i])
-		i++;
 	if (size > 0)
 	{
-		while (src[i2] != '\0' && i2 < size - 1)
+		while (src[i] && i < (size - 1))
 		{
-			dst[i2] = src[i2];
-			i2++;
+			dst[i] = src[i];
+			i++;
 		}
-		dst[i2] = '\0';
+		dst[i] = 0;
 	}
+	while (src[i])
+		i++;
 	return (i);
 }
 /*#include <stdio.h>

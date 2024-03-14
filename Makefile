@@ -58,8 +58,8 @@ $(NAME): $(OBJ)
 	$(AR) $@ $(OBJ)
 
 %.o: %.c
-	$(CC) $(FLAGS) -c $< -o $@
-
+	$(CC) $(FLAGS) -c $< -o $@	
+	
 clean :
 	$(RM) $(OBJ)
 
